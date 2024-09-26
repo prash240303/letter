@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Letter Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0e6d2;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding-top: 64px;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .sanchez-regular {
+      font-family: "Sanchez", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .letter-container {
+      position: relative;
+      max-width: 1200px;
+      opacity: 0;
+      font: 18px;
+      transform: translateY(20px);
+      transition: opacity 1s, transform 1s;
+    }
+
+    .letter-header {
+      text-align: center;
+      opacity: 0;
+      margin-bottom: 48px;
+      transform: translateY(20px);
+      transition: opacity 1s 0.5s, transform 1s 0.5s;
+    }
+
+    .heading {
+      width: 350px;
+    }
+
+    .letter-content {
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s 1s, transform 1s 1s;
+    }
+
+    .flower {
+      position: absolute;
+      width: 700px;
+      opacity: 0;
+      transition: opacity 1s, transform 1s;
+    }
+
+    .flower-top-left {
+      top: -190px;
+      left: -190px;
+      transform: rotate(-30deg) translateX(-50px);
+    }
+
+    .flower-bottom-right {
+      bottom: -190px;
+      right: -190px;
+      transform: rotate(30deg) translateX(50px);
+    }
+
+    .signature {
+      width: 150px;
+    }
+
+
+
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap');
+  </style>
+</head>
+
+<body>
+  <div class="container sanchez-regular">
+    <img src="background.png" alt="border" class="background" />
+    <div class="content-wrapper">
+      <div class="letter-header">
+        <img src="heading.png" alt="heading" class="heading" />
+      </div>
+      <div class="letter-container">
+        <p>Hi Rishita, this is a letter I am writing to let you know how much I love you, both as a friend and as a
+          human being. I have been writing letters for the past two years now, and I feel the need to write a letter to
+          you as well (since you have been acting I think it's time to write the first letter to you, I am sorry, I
+          am a man of long messages and explanations, I can't describe us in 30 words, I need a whole essay). I met you
+          by accident, a complete stranger who has shown genuine interest in me, regardless of knowing about me, who
+          I was just trusting over some exchanges of words.</p>
+        <p>
+          I remember that night, when you stayed and talked to me when I was in pain, we talked, we talked real things,
+          you talked about your long hair, you talked about your feelings through and through. I remember your long
+          paragraphs you giving me hope to do good. I did not intend to like you or develop feelings for you, since I
+          felt good enough with Jasmine and did realize that I'm only 21 and I have a big life ahead, people stay for
+          short in this phase of life, you might leave by tomorrow, who knows. It's just I like sticking to you, someone
+          who would not ignore me and give attention to most boring talk. And my weirdest fantasies as well.
+        </p>
+        <p>
+          I am glad to have a friend like you. I truly appreciate your efforts despite having trust issues with people
+          in long distance. Despite my unattended efforts in April and the turmoil that happened, I blocked you in
+          frustration and sadness. I am really sorry for that time. And I probably regret deleting your pictures
+          since I had pictures of the screenshots of our very first conversation. I just love that conversation to my
+          core heart since for the first time I talked to someone open[-]heartedly and I really loved your response. To
+          be continued in the next letter. Aage ki story aglee part me🫶
+        </p>
+        <img src="signature.png" alt="signature" class="signature">
+      </div>
+      <img src="rose.png" alt="Flower" class="flower flower-bottom-right">
+    </div>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.letter-container');
+        const header = document.querySelector('.letter-header');
+        const content = document.querySelector('.letter-content');
+        const flowers = document.querySelectorAll('.flower');
+
+        setTimeout(() => {
+          container.style.opacity = '1';
+          container.style.transform = 'translateY(0)';
+        }, 0);
+
+        setTimeout(() => {
+          header.style.opacity = '1';
+          header.style.transform = 'translateY(0)';
+        }, 0);
+
+        setTimeout(() => {
+          content.style.opacity = '1';
+          content.style.transform = 'translateY(0)';
+        }, 0);
+
+        flowers.forEach((flower, index) => {
+          setTimeout(() => {
+            flower.style.opacity = '1';
+            flower.style.transform = 'rotate(0) translateX(0)';
+          }, 0 + index * 0);
+        });
+      });
+    </script>
+</body>
+
+</html>
